@@ -9,7 +9,7 @@ int main() {
 	while(i<=n) {
 		int j=1;
 		while(j<=n) {
-			cout<<"I LOVE YOU"<< count<<"  ";
+			cout<<"Hii"<< count<<"  ";
 			count = count+1;
 			j=j+1;
 		}
