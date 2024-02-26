@@ -1,12 +1,38 @@
 #include<iostream>
 using namespace std;
-int main() {
-	int n;
-	cout<<"Enter the number"<<endl;
-	cin>>n;
+
+class number {
+	int a;
 	
-	int i;
-	for(i=1;i<=5;i++) {
-		cout<<"Sarvesh singh" <<endl;
+	public:
+		void getdata(void);
+		int task(void);
+		void display(void);
+};
+void number :: getdata(void)
+{
+	cout<<"Enter a number : ";
+	cin>>a;
+}
+int number :: task(void)
+{
+	int x;
+	if(a%5==0) {
+		x=0;
+		return (x);
 	}
+	else {
+		x=a%5;
+		return (x);
+	}
+}
+void number :: display(void)
+{
+	cout<<"Remainder : " << task() <<endl;
+}
+int main() {
+	number num;
+	num.getdata();
+	num.display();
+	return 0;
 }
