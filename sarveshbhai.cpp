@@ -1,38 +1,38 @@
 #include<iostream>
+#include<conio.h>
+#define size 2
 using namespace std;
 
-class number {
-	int a;
-	
+class student {
+	int roll[size];
+	char name[size][20];
 	public:
 		void getdata(void);
-		int task(void);
 		void display(void);
 };
-void number :: getdata(void)
+void student :: getdata(void)
 {
-	cout<<"Enter a number : ";
-	cin>>a;
-}
-int number :: task(void)
-{
-	int x;
-	if(a%5==0) {
-		x=0;
-		return (x);
-	}
-	else {
-		x=a%5;
-		return (x);
+	for(int i =0 ; i<size ; i++)
+	{
+		cout<<"name : "<<endl;
+		cin>>name[i];
+		cout<<"roll : "<<endl;
+		cin>>roll[i];
 	}
 }
-void number :: display(void)
+void student :: display(void)
 {
-	cout<<"Remainder : " << task() <<endl;
+	for(int i=0 ; i<size; i++)
+	{
+		cout<<"name:" << name[i] <<endl;
+		cout<<"roll:" << roll[i] <<endl;
+		getch ();
+	}
 }
 int main() {
-	number num;
-	num.getdata();
-	num.display();
+	student stu;
+	stu.getdata();
+	stu.display();
 	return 0;
 }
+
