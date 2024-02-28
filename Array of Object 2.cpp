@@ -26,6 +26,7 @@ void office :: display(void)
 	cout<<"Name : " << name << endl;
 	cout<<"ID : " << id << endl;
 	cout<<"Department  : " << dep << endl;
+	getch ();
 }
 int main() {
 	office manager[3] , proffesor[5];

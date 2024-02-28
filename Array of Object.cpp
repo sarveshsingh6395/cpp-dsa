@@ -1,6 +1,6 @@
 #include<iostream>
 #include<conio.h>
-#define size 4
+#define size 2
 using namespace std;
 
 class student {
@@ -28,12 +28,12 @@ void student :: display(void)
 int main() {
  	student st[size];
  	for(int i =0; i<size; i++){
- 		cout<<"Enter details of students"<< i+1 << endl;
+ 		cout<<"Enter details of student"<< " "<< i+1 << endl;
  		st[i].getdata();
 	 }
 	cout<<endl;
 	for(int i=0; i<size; i++){
-		cout<<"Details of students"<< i+1 << endl;
+		cout<<"Details of student"<<" " << i+1 << endl;
 		st[i].display();
 	}
 	return 0;

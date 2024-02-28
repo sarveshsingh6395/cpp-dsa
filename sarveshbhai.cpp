@@ -1,38 +1,57 @@
 #include<iostream>
 #include<conio.h>
-#define size 2
 using namespace std;
 
-class student {
-	int roll[size];
-	char name[size][20];
+class company{
+	int id;
+	char name[20];
+	char dep[20];
+	
 	public:
 		void getdata(void);
 		void display(void);
 };
-void student :: getdata(void)
+void company ::  getdata(void)
 {
-	for(int i =0 ; i<size ; i++)
-	{
-		cout<<"name : "<<endl;
-		cin>>name[i];
-		cout<<"roll : "<<endl;
-		cin>>roll[i];
-	}
+	cout<<"Enter the name : ";
+	cin>>name;
+	cout<<"Enter the id : ";
+	cin>>id;
+	cout<<"Enter the department : ";
+	cin>>dep;
 }
-void student :: display(void)
+void company :: display(void)
 {
-	for(int i=0 ; i<size; i++)
-	{
-		cout<<"name:" << name[i] <<endl;
-		cout<<"roll:" << roll[i] <<endl;
-		getch ();
-	}
+	cout<<"Name : " << name << endl;
+	cout<<"Id : " << id << endl;
+	cout<<"department : " << dep << endl;
+	cout<<"Press enter for further details...."<<endl;
+	getch ();
 }
-int main() {
-	student stu;
-	stu.getdata();
-	stu.display();
+int main()
+{
+	company manager[1], workers[2];
+	for(int i=0; i<1; i++)
+	{
+		cout<<"Enter the detail of manager --> "<< " "<< i+1 <<endl;
+		manager[i].getdata();
+	}
+	for(int i=0;i<2; i++)
+	{
+		cout<<"Detail of worker -->"<<" "<< i+1 << endl;
+		workers[i].getdata();
+	}
+	cout<<endl
+	;
+	for(int i=0;i<1;i++)
+	{
+		cout<<"Detail of manager -->" << " " << i+1 << endl;
+		manager[i].display();
+	}
+	for(int i=0;i<2;i++)
+	{
+		cout<<"Detail of worker -->"<< " " << i+1 << endl;
+		workers[i].display();
+	}
 	return 0;
 }
-
