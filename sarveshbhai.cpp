@@ -1,57 +1,49 @@
 #include<iostream>
 #include<conio.h>
 using namespace std;
-
-class company{
+class uit{
 	int id;
 	char name[20];
-	char dep[20];
-	
 	public:
 		void getdata(void);
 		void display(void);
 };
-void company ::  getdata(void)
+void uit :: getdata(void)
 {
-	cout<<"Enter the name : ";
+	cout<<"enter name :";
 	cin>>name;
-	cout<<"Enter the id : ";
+	cout<<"enter id : ";
 	cin>>id;
-	cout<<"Enter the department : ";
-	cin>>dep;
 }
-void company :: display(void)
+void uit :: display(void)
 {
-	cout<<"Name : " << name << endl;
-	cout<<"Id : " << id << endl;
-	cout<<"department : " << dep << endl;
-	cout<<"Press enter for further details...."<<endl;
+	cout<<"name : " << name << endl;
+	cout<<"id : " << id << endl;
+	cout<<"press enter....."<<endl;
 	getch ();
 }
-int main()
-{
-	company manager[1], workers[2];
-	for(int i=0; i<1; i++)
-	{
-		cout<<"Enter the detail of manager --> "<< " "<< i+1 <<endl;
-		manager[i].getdata();
-	}
-	for(int i=0;i<2; i++)
-	{
-		cout<<"Detail of worker -->"<<" "<< i+1 << endl;
-		workers[i].getdata();
-	}
-	cout<<endl
-	;
-	for(int i=0;i<1;i++)
-	{
-		cout<<"Detail of manager -->" << " " << i+1 << endl;
-		manager[i].display();
-	}
+int main() {
+	uit hod[2], proffesor[3];
 	for(int i=0;i<2;i++)
 	{
-		cout<<"Detail of worker -->"<< " " << i+1 << endl;
-		workers[i].display();
+		cout<<"enter detail of hod"<<" "<<i+1 <<endl;
+		hod[i].getdata();
+	}
+	for(int i=0;i<3;i++)
+	{
+		cout<<"enter detail of proffesor"<<" "<<i+1 << endl;
+		proffesor[i].getdata();
+	}
+	cout<<endl;
+	for(int i=0;i<2;i++)
+	{
+		cout<<"details of hod"<<" "<<i+1<<endl;
+		hod[i].display();
+	}
+	for(int i=0;i<3;i++)
+	{
+		cout<<"detail of proffesor"<<" "<<i+1<< endl;
+		proffesor[i].display();
 	}
 	return 0;
 }
