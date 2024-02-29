@@ -1,34 +1,57 @@
 #include<iostream>
 using namespace std;
-class total {
-	int n;
+class matrix{
+	int item[2][3];
 	public:
 		void getdata(void);
-		void putdata(void);
-		void add(total, total);
+	 	void putdata(void);
+	 	void add(matrix, matrix);
 };
-void total :: getdata(void)
+void matrix :: getdata(void)
 {
-	cout<<"enter number : ";
-	cin>>n;
+	for(int i=0;i<2;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+			cin>>item[i][j];
+		}
+	}
 }
-void total :: putdata(void)
+void matrix :: putdata(void)
 {
-	cout<< n <<endl;
+	for(int i=0;i<2;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+			cout<<item[i][j]<<" ";
+		}
+		cout<<endl;
+	}
 }
-void total :: add(total x, total y)
+void matrix :: add(matrix x, matrix y)
 {
-	n = x.n + y.n;
+	for(int i=0;i<2;i++)
+	{
+		for(int j=0;j<3;j++)
+		{
+			item[i][j] = x.item[i][j] + y.item[i][j];
+		}
+	}
 }
 int main() {
-	total r,s,result;
-	r.getdata();
-	s.getdata();
-	cout<<"value of r : ";
-	r.putdata();
-	cout<<"value of s : ";
-	s.putdata();
-	result.add(r,s);
-	cout<<"Addition : ";
+	matrix a,b,result;
+	cout<<"enter value of a : "<<endl;
+	a.getdata();
+	cout<<"enter value of b : "<<endl;
+	b.getdata();
+	cout<<"you entered a : "<<endl;
+	a.putdata();
+	cout<<"you entered b : "<<endl;
+	b.putdata();
+	result.add(a,b);
+	cout<<"Addition : "<<endl;
 	result.putdata();
+	
 }
+
+
