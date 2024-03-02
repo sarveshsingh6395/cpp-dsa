@@ -1,15 +1,15 @@
 #include<iostream>
 using namespace std;
 class matrix{
-	int item[2][3];
+	int item[3][3];
 	public:
-		void getdata(void);
-	 	void putdata(void);
-	 	void add(matrix, matrix);
+	void getdata(void);
+	void putdata(void);
+	void product(matrix, matrix);
 };
 void matrix :: getdata(void)
 {
-	for(int i=0;i<2;i++)
+	for(int i=0;i<3;i++)
 	{
 		for(int j=0;j<3;j++)
 		{
@@ -19,39 +19,40 @@ void matrix :: getdata(void)
 }
 void matrix :: putdata(void)
 {
-	for(int i=0;i<2;i++)
+	for(int i=0;i<3;i++)
 	{
 		for(int j=0;j<3;j++)
 		{
-			cout<<item[i][j]<<" ";
+			cout<< item[i][j]<<"  ";
 		}
 		cout<<endl;
 	}
 }
-void matrix :: add(matrix x, matrix y)
+void matrix :: product(matrix x, matrix y)
 {
-	for(int i=0;i<2;i++)
+	for(int i=0; i<3 ; i++)
 	{
-		for(int j=0;j<3;j++)
+		for(int j=0; j<3;j++)
 		{
-			item[i][j] = x.item[i][j] + y.item[i][j];
+			item[i][j] = x.item[i][j] * y.item[i][j];
 		}
 	}
 }
-int main() {
+int main()
+{
 	matrix a,b,result;
-	cout<<"enter value of a : "<<endl;
+	cout<<"Enter Matrix a: "<< endl;
 	a.getdata();
-	cout<<"enter value of b : "<<endl;
+	cout<<"Enter Matrix b: "<< endl; 
 	b.getdata();
-	cout<<"you entered a : "<<endl;
+	cout<<"You entered matrix A : "<< endl;
 	a.putdata();
-	cout<<"you entered b : "<<endl;
+	cout<<"You entered matrix B : "<< endl;
 	b.putdata();
-	result.add(a,b);
-	cout<<"Addition : "<<endl;
+	result.product(a,b);
+	cout<<"Product : " << endl;
 	result.putdata();
-	
 }
+
 
 
